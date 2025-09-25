@@ -77,8 +77,11 @@
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl overflow-hidden">
-  <img src="IMG_8034.jpeg" alt="Avatar" class="w-full h-full object-cover" />
+                <!-- Avatar -->
+                <div class="bg-blue-600 rounded-full w-10 h-10 flex items-center justify-center overflow-hidden">
+                    <img src="IMG_8034.jpeg" alt="Avatar" class="w-full h-full object-cover" />
+                </div>
+                <!-- Title -->
                 <h1 class="text-2xl font-bold text-gray-800">Desi University</h1>
             </div>
             <nav>
@@ -109,10 +112,10 @@
                     <div class="order-2 md:order-1 animate-fadeIn">
                         <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Chất Lượng Đẳng Cấp Huyền Thoại</h3>
                         <p class="text-lg text-gray-600 mb-4 leading-relaxed">
-                            Desi University tự hào nằm trong **top 0.1% trường hàng đầu thế giới**, với chất lượng đào tạo mang đẳng cấp huyền thoại, sánh ngang – và vượt qua – những biểu tượng giáo dục toàn cầu.
+                            Desi University tự hào nằm trong <b>top 0.1% trường hàng đầu thế giới</b>, với chất lượng đào tạo mang đẳng cấp huyền thoại, sánh ngang – và vượt qua – những biểu tượng giáo dục toàn cầu.
                         </p>
                         <p class="text-lg text-gray-600 leading-relaxed">
-                            Chúng tôi không chỉ đào tạo những người giỏi, chúng tôi đào tạo **những người dẫn đầu**. ♥
+                            Chúng tôi không chỉ đào tạo những người giỏi, chúng tôi đào tạo <b>những người dẫn đầu</b>. ♥
                         </p>
                     </div>
                     <div class="order-1 md:order-2 flex justify-center animate-bounce-in">
@@ -150,7 +153,7 @@
                         </form>
                     </div>
                     <div id="successContent" class="hidden animate-fadeIn">
-                        <img src="https://cdn.discordapp.com/attachments/1252191986519191632/1252194639999744150/image.png?ex=66708316&is=666f3196&hm=f3b18563a3c220f8373b313778a4b49acae4f911953255653c15383dd610587d&" alt="Desi University Logo" class="mx-auto w-48 h-48 mb-6 animate-bounce-in">
+                        <img src="https://cdn.discordapp.com/attachments/1252191986519191632/1252194639999744150/image.png" alt="Desi University Logo" class="mx-auto w-48 h-48 mb-6 animate-bounce-in">
                         <h4 class="text-2xl md:text-3xl font-bold text-green-600 mb-4">Đăng ký thành công!</h4>
                         <p class="text-lg text-gray-600 mb-8">
                             Chào mừng bạn đến với Desi University. Hãy tham gia máy chủ Discord của chúng tôi để cập nhật thông tin mới nhất và kết nối với cộng đồng.
@@ -192,7 +195,7 @@
                 registrationContent.appendChild(statusMessage);
 
                 // API endpoint để gửi dữ liệu
-                const discordWebhookUrl = 'https://discord.com/api/webhooks/1420821557051396118/OQWIDOZ2dTkQLSQlqEQSD0jLkfgNsRpCH-WaByNShQR6H5LjHoU_lFc0ltmMT6SJkHkc'; // Vui lòng cập nhật webhook này
+                const discordWebhookUrl = 'https://discord.com/api/webhooks/xxxxxxx'; // Thay webhook thật
 
                 // Cấu trúc dữ liệu cho Discord
                 const data = {
@@ -212,17 +215,13 @@
                 };
 
                 try {
-                    // Gửi dữ liệu đến Discord webhook
                     const response = await fetch(discordWebhookUrl, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(data)
                     });
 
                     if (response.ok) {
-                        // Ẩn form và hiển thị nội dung thành công
                         registrationContent.classList.add('hidden');
                         successContent.classList.remove('hidden');
                     } else {
@@ -240,4 +239,3 @@
     </script>
 </body>
 </html>
-
